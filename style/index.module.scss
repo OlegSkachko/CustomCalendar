@@ -1,0 +1,254 @@
+@import "../../../styles/global/mixins";
+
+.date {
+  &_picker {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.prevbtn,
+.nextbtn {
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: var(--color-hover);
+  }
+}
+
+.calendar {
+  z-index: 44;
+  min-width: 412px;
+  min-height: 343px;
+  top: 32px;
+  right: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  padding: 20px;
+  box-shadow: var(--drop-shadow);
+  border-radius: 16px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_reset {
+      @include font-size(14, 400);
+
+      line-height: 16.8px;
+      background-color: transparent;
+      border: none;
+      color: var(--color-primary);
+      margin-top: 10px;
+      padding: 0;
+
+      &:hover {
+        cursor: pointer;
+        color: var(--color-hover);
+      }
+    }
+
+    &_right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  &_month {
+    &_table {
+      position: relative;
+      width: 372px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--color-stroke);
+    }
+  }
+
+  &_table {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    font-weight: bold;
+    width: 100%;
+    height: 205px;
+  }
+
+  &_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.month {
+  &_header {
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-stroke);
+  }
+}
+
+.label {
+  @include font-size(18, 800);
+
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  line-height: 21.6px;
+  cursor: default;
+
+  &_year {
+    @include font-size(16, 400);
+
+    line-height: 19.2px;
+    padding-left: 2px;
+  }
+}
+
+.weekday {
+  padding: 0;
+
+  &_row {
+    height: 24px;
+  }
+
+  &_cell {
+    @include font-size(14, 800);
+
+    color: var(--color-black);
+  }
+}
+
+.day {
+  &_cell {
+    @include font-size(16, 400);
+
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 100ms;
+    padding: 4px;
+    margin: 0 auto;
+    background: none;
+    border: none;
+
+    &:hover {
+      background-color: var(--color-hover);
+      color: var(--color-white);
+    }
+
+    &_container {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+.selected {
+  &_day {
+    &_cell {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+}
+
+.is {
+  &_first {
+    border-radius: 15px 0 0 15px;
+  }
+
+  &_last {
+    border-radius: 0 15px 15px 0;
+  }
+
+  &_between {
+    background-color: var(--color-background-hover);
+  }
+
+  &_disabled {
+    color: var(--color-stroke);
+    cursor: not-allowed;
+  }
+}
+
+.time {
+  position: absolute;
+  z-index: 44;
+  top: 0;
+  right: -103px;
+  width: 88px;
+  height: 342px;
+  border-radius: 12px;
+  box-shadow: var(--drop-shadow);
+  background-color: var(--color-white);
+  overflow: hidden;
+
+  &__container {
+    @include scrollbar;
+    @include font-size(18, 800);
+
+    position: relative;
+    width: 88px;
+    height: 267px;
+    padding: 5px 0;
+    gap: 5px;
+    overflow-y: scroll;
+
+    &_item {
+      @include font-size(16, 400);
+
+      width: 100%;
+      min-height: 30px;
+      max-height: 30px;
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--color-background-hover);
+        color: var(--color-hover);
+      }
+
+      &_active {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__title {
+    @include font-size(18, 800);
+
+    width: 88px;
+    height: 75px;
+    border-bottom: 1px solid var(--color-stroke);
+  }
+}
