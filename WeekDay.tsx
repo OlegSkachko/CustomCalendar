@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
+
 import { WEEKDAY } from './const'
+
 import styles from './style/index.module.scss'
 
 /**

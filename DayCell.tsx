@@ -1,7 +1,10 @@
 import React, { FC, memo } from 'react'
 import classNames from 'classnames'
+
 import { useDayCell } from './hooks'
+
 import { IDayCell } from './interfaces'
+
 import styles from './style/index.module.scss'
 
 /**

@@ -1,5 +1,7 @@
 import React, { FC, memo } from 'react'
+
 import DayRow from './DayRow'
+
 import { IDays } from './interfaces'
 
 /**

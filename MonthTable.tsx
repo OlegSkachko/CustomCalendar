@@ -1,9 +1,12 @@
 import React, { FC, memo } from 'react'
 import classNames from 'classnames'
+
 import Days from './Days'
 import Weekday from './WeekDay'
 import * as I from './icons/icons'
+
 import { IMonthTable } from './interfaces'
+
 import styles from './style/index.module.scss'
 
 /**

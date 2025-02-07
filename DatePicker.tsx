@@ -1,7 +1,11 @@
 import React, { FC } from 'react'
+
 import MonthTable from './MonthTable'
+
 import useDatePicker from './hooks/useDatePicker'
+
 import { IDatePicker } from './interfaces'
+
 import styles from './style/index.module.scss'
 
 /**

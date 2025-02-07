@@ -1,8 +1,12 @@
 import { useContext } from 'react'
+
 import { CalendarContext } from '../context'
+
 import { unitToDateObj, getFirstLastWeekDay, isEqualDate } from '../utils'
-import { TUseDayCell } from '../interfaces'
+
 import { DEFAULT_DAY_CELL } from '../const'
+
+import { TUseDayCell } from '../interfaces'
 
 /**
  * @hook   useDatePicker

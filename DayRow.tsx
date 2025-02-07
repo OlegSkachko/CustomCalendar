@@ -1,5 +1,7 @@
 import React, { FC, memo } from 'react'
+
 import DayCell from './DayCell'
+
 import { IDayRow } from './interfaces'
 
 /**
